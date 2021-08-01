@@ -21,7 +21,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.android.unscramble.R
@@ -35,11 +34,11 @@ class GameFragment : Fragment() {
 
     // Binding object instance with access to the views in the game_fragment.xml layout
     private lateinit var binding: GameFragmentBinding
-    private val viewModel: GameViewModel by viewModels()
 
     // Create a ViewModel the first time the fragment is created.
     // If the fragment is re-created, it receives the same GameViewModel instance created by the
     // first fragment
+    private val viewModel: GameViewModel by viewModels()
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -47,6 +46,9 @@ class GameFragment : Fragment() {
     ): View {
         // Inflate the layout XML file and return a binding object instance
         binding = GameFragmentBinding.inflate(inflater, container, false)
+
+        Log.d("GameFragment", "Current_Word: ${viewModel.currentScrambledWord} " +
+        "Score: ${viewModel.score} WordCount ${viewModel.currentWordCount}")
 
         return binding.root
     }
@@ -68,13 +70,17 @@ class GameFragment : Fragment() {
     * Checks the user's word, and updates the score accordingly.
     * Displays the next scrambled word.
     */
-    private fun onSubmitWord() {
-        if (viewModel.nextWord()){
-            updateNextWordOnScreen()
-        } else {
-            showFinalScoreDialog()
-        }
+    private fun onSubmitWord()
+    {
+        val playerWord = binding.textInputEditText.text.toString()
 
+        if (viewModel.isUserWordCorrect(playerWord)) {
+            setErrorTextField(false)
+
+            if (viewModel.nextWord()) { updateNextWordOnScreen() }
+            else                      { showFinalScoreDialog()   }
+
+        } else {  setErrorTextField(true) }
     }
 
     /*
@@ -82,7 +88,12 @@ class GameFragment : Fragment() {
      * Increases the word count.
      */
     private fun onSkipWord() {
+        if (viewModel.nextWord())
+        {
+            setErrorTextField(false)
+            updateNextWordOnScreen()
 
+         } else { showFinalScoreDialog() }
     }
 
     /*
@@ -110,6 +121,7 @@ class GameFragment : Fragment() {
      * restart the game.
      */
     private fun restartGame() {
+        viewModel.reinitializeData()
         setErrorTextField(false)
         updateNextWordOnScreen()
     }
