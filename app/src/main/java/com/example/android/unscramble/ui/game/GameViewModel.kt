@@ -5,11 +5,13 @@ import androidx.lifecycle.ViewModel
 
 class GameViewModel : ViewModel() {
 
-    private var score = 0
+    private var _score = 0
+    val score: Int
+    get() = _score
 
     private var currentWordCount = 0
-    private lateinit var _currentScrambledWord: String
 
+    private lateinit var _currentScrambledWord: String
     val currentScrambledWord: String
     get() = _currentScrambledWord
 
@@ -27,7 +29,7 @@ class GameViewModel : ViewModel() {
         val tempWord = currentWord.toCharArray()
         tempWord.shuffle()
 
-        // Makes sure the unscrambled word is different from the original
+        // Makes sure the unscrambled word differs from the original
         while(tempWord.toString().equals(currentWord, false)){
             tempWord.shuffle()
         }
@@ -42,11 +44,15 @@ class GameViewModel : ViewModel() {
         }
     }
 
-    private fun nextWord() : Boolean {
+     fun nextWord() : Boolean {
        return if (currentWordCount < MAX_NO_OF_WORDS){
             getNextWord()
             true
         } else false
 
+    }
+
+    private fun inscreaseScore(){
+        _score += SCORE_INCREASE
     }
 }
