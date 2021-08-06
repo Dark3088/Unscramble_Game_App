@@ -22,10 +22,7 @@ class GameViewModel : ViewModel() {
     private var wordslist: MutableList<String> = mutableListOf()
     private lateinit var currentWord: String
 
-    init {
-        Log.d("GameViewModel", "ViewModel Created!")
-        getNextWord()
-    }
+    init { getNextWord() }
 
     private fun getNextWord(){
 

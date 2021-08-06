@@ -45,9 +45,6 @@ class GameFragment : Fragment() {
         // Inflate the layout XML file and return a binding object instance
         binding = DataBindingUtil.inflate(inflater, R.layout.game_fragment, container, false)
 
-        Log.d("GameFragment", "Current_Word: ${viewModel.currentScrambledWord} " +
-        "Score: ${viewModel.score} WordCount ${viewModel.currentWordCount}")
-
         return binding.root
     }
 
@@ -63,7 +60,6 @@ class GameFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
 
     }
-
     /*
     * Checks the user's word, and updates the score accordingly.
     * Displays the next scrambled word.
@@ -80,7 +76,6 @@ class GameFragment : Fragment() {
             }
         } else {  setErrorTextField(true) }
     }
-
     /*
      * Skips the current word without changing the score.
      * Increases the word count.
@@ -89,7 +84,6 @@ class GameFragment : Fragment() {
         if (viewModel.nextWord())
         {
             setErrorTextField(false)
-
 
          } else { showFinalScoreDialog() }
     }
