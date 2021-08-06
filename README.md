@@ -1,25 +1,28 @@
 Unscramble App
 ===================================
 
-Starter code for Android Basics codelab - Store the data in a ViewModel
+This project is my solution code for the "Android Basics in Kotlin - Architecture Components" 
+pathway. And it implements Android Jetpack Architecture components.
 
-Unscramble is  a single player game app that displays scrambled words. To play the game, player has
-to make a word using all the letters from the displayed scrambled word.
+Game Overview
+-------------
 
-Used in the [Android Basics with Kotlin](https://developer.android
-.com/courses/android-basics-kotlin/course) course.
+The Unscramble app is a single player word scrambler game. The app displays one scrambled word at 
+a time, and the player has to guess the word using all the letters from the scrambled word. The 
+player scores points if the word is correct, otherwise the player can try any number of times. The 
+app also has an option to skip the current word. In the left top corner, the app displays the 
+word count, which is the number of words played in this current game. There are 10 words per game.
+
+Used in the [Android Basics in Kotlin](https://developer.android.com/courses/pathways/android-basics-kotlin-unit-3-pathway-3) course.
 
 
-Pre-requisites
---------------
+Accessibility 
+-------------
 
-You need to know:
-- Knowledge about Fragments.
-- How to design a layout in ConstraintLayout.
-- Able to write control flow statements (if / else, when statements).
-- Able to update the UI of the app based on user input.
-- Able to add a click listener to a Button.
-
+* If the user has the "Talkback" feature enabled while playing "Unscramble", the app will load 
+  the scrambled word and spell one letter at a time (instead of trying to read it as a regular word)
+  
+![Screenshots](/images/Unscramble_Screen_0.png)
 
 Getting Started
 ---------------
