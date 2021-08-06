@@ -22,7 +22,9 @@ Accessibility
 * If the user has the "Talkback" feature enabled while playing "Unscramble", the app will load 
   the scrambled word and spell one letter at a time (instead of trying to read it as a regular word)
   
-![Screenshots](/images/Unscramble_Screen_0.png)
+Screenshots:
+------------
+![Screenshots](/images/Unscrambled_1.png)
 
 Getting Started
 ---------------
