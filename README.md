@@ -22,6 +22,13 @@ Accessibility
 * If the user has the "Talkback" feature enabled while playing "Unscramble", the app will load 
   the scrambled word and spell one letter at a time (instead of trying to read it as a regular word)
   
+Libraries used:
+---------------
+
+- ViewModel
+- LiveData
+- Data Binding
+
 Screenshots:
 ------------
 <img src="images/unscramble_1.png" width="220" /> <img src="images/unscramble_2.png" width="220" /> <img src="images/unscramble_3.png" width="220" />
