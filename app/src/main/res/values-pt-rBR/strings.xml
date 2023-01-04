@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Unscramble</string>
+    <string name="instructions">Desembaralhe a palavra utilizando todas as letras</string>
+    <string name="skip">Pular</string>
+    <string name="submit">Checar</string>
+    <string name="score">Pontuação: %d</string>
+    <string name="word_count">%d de %d palavras</string>
+    <string name="enter_your_word">Digite sua palavra</string>
+    <string name="congratulations">Parabéns!</string>
+    <string name="you_scored">Sua pontuação:</string>
+    <string name="exit">Sair</string>
+    <string name="play_again">Jogar Novamente</string>
+    <string name="try_again">Tentar Novamente</string>
+
+</resources>
