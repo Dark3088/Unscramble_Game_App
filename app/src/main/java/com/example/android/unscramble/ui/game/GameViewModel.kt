@@ -51,7 +51,7 @@ class GameViewModel : ViewModel() {
         tempWord.shuffle()
 
         // Makes sure the unscrambled word differs from the original
-        while(tempWord.toString().equals(currentWord, false)){
+        while(String(tempWord).equals(currentWord, true)){
             tempWord.shuffle()
         }
 
