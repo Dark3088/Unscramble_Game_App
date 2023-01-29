@@ -31,7 +31,7 @@ Libraries used:
 
 Screenshots:
 ------------
-<img src="images/unscramble_1.png" width="220" /> <img src="images/unscramble_2.png" width="220" /> <img src="images/unscramble_3.png" width="220" />
+<img src="images/unscramble_1.png" width="250" /> <img src="images/unscramble_2.png" width="250" /> <img src="images/unscramble_3.png" width="250" />
 
 Getting Started
 ---------------
